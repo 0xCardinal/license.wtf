@@ -1,94 +1,3 @@
-// Questions data
-const questions = [
-  {
-    id: 'commercial',
-    text: 'Can people use your code in commercial projects?',
-    emoji: '💸',
-    description: 'Should companies be able to make money using your code?',
-    type: 'toggle',
-    options: [
-      { value: false, text: '❌ No', emoji: '❌' },
-      { value: 'maybe', text: '🤷 I don\'t mind', emoji: '🤷' },
-      { value: true, text: '✅ Yes', emoji: '✅' }
-    ]
-  },
-  {
-    id: 'share_changes',
-    text: 'Should people share their changes back?',
-    emoji: '♻️',
-    description: 'Do you want improvements to come back to the community?',
-    type: 'toggle',
-    options: [
-      { value: 'not_needed', text: '🙅 Never', emoji: '🙅' },
-      { value: 'optional', text: '🤷 Optional', emoji: '🤷' },
-      { value: 'required', text: '♻️ Always', emoji: '♻️' }
-    ]
-  },
-  {
-    id: 'closed_source',
-    text: 'Is it okay if someone turns your code into a closed-source product?',
-    emoji: '🔒',
-    description: 'How do you feel about proprietary derivatives?',
-    type: 'toggle',
-    options: [
-      { value: false, text: '❌ Not okay', emoji: '❌' },
-      { value: 'maybe', text: '🤷 Depends', emoji: '🤷' },
-      { value: true, text: '✅ Totally fine', emoji: '✅' }
-    ]
-  },
-  {
-    id: 'saas_opensource',
-    text: 'If someone runs your code on a web app (like a SaaS), should they open source it too?',
-    emoji: '🌐',
-    description: 'What about web applications and services?',
-    type: 'toggle',
-    options: [
-      { value: false, text: '🕵️ No need', emoji: '🕵️' },
-      { value: 'maybe', text: '🤷 Not sure', emoji: '🤷' },
-      { value: true, text: '🌐 Yes, always', emoji: '🌐' }
-    ]
-  },
-  {
-    id: 'patents',
-    text: 'Do you want protection for your ideas (patents)?',
-    emoji: '🛡️',
-    description: 'Protection against patent trolls and legal issues',
-    type: 'toggle',
-    options: [
-      { value: false, text: '❌ No', emoji: '❌' },
-      { value: 'maybe', text: '🤷 Maybe', emoji: '🤷' },
-      { value: true, text: '🛡️ Yes', emoji: '🛡️' }
-    ]
-  },
-  {
-    id: 'complexity',
-    text: 'How simple should your license be?',
-    emoji: '📜',
-    description: 'Simple licenses are easier to understand and adopt',
-    type: 'slider',
-    minLabel: '📜 Legal text is fine',
-    maxLabel: '⚡ Super simple'
-  },
-  {
-    id: 'copyleft',
-    text: 'How strongly do you want others to keep their code open (copyleft)?',
-    emoji: '♻️',
-    description: 'Should derivative works use the same license?',
-    type: 'slider',
-    minLabel: '🔓 Not at all',
-    maxLabel: '♻️ All of it'
-  },
-  {
-    id: 'compatibility',
-    text: 'How compatible should your license be with other codebases?',
-    emoji: '🤝',
-    description: 'Should your license work well with other licenses?',
-    type: 'slider',
-    minLabel: '🧱 Doesn\'t matter',
-    maxLabel: '🤝 Must work with many'
-  }
-];
-
 // App state
 let answers = {};
 let showResults = false;
@@ -360,281 +269,141 @@ function createRecommendationCard(recommendation, index) {
   return card;
 }
 
-// License database
-const licenses = [
-  {
-    name: 'MIT',
-    description: 'Super simple and permissive. Anyone can do almost anything with your code, including selling it.',
-    characteristics: {
-      commercial: true,
-      share_changes: 'not_needed',
-      closed_source: true,
-      saas_opensource: false,
-      patents: false,
-      complexity: 'high',
-      copyleft: 'none',
-      compatibility: 'high'
-    },
-    reasons: [
-      'Allows commercial use ✓',
-      'No requirement to share changes ✓',
-      'Very simple to understand ✓',
-      'Widely adopted and trusted ✓',
-      'Highly compatible with other licenses ✓'
-    ]
-  },
-  {
-    name: 'Apache 2.0',
-    description: 'Like MIT but with better patent protection and more explicit terms for contributions.',
-    characteristics: {
-      commercial: true,
-      share_changes: 'not_needed',
-      closed_source: true,
-      saas_opensource: false,
-      patents: true,
-      complexity: 'medium',
-      copyleft: 'none',
-      compatibility: 'high'
-    },
-    reasons: [
-      'Allows commercial use ✓',
-      'Strong patent protection ✓',
-      'Clear contribution guidelines ✓',
-      'Enterprise-friendly ✓',
-      'Good compatibility ✓'
-    ]
-  },
-  {
-    name: 'GPL-3.0',
-    description: 'Strong copyleft license that requires derivative works to also be open source.',
-    characteristics: {
-      commercial: true,
-      share_changes: 'required',
-      closed_source: false,
-      saas_opensource: true,
-      patents: true,
-      complexity: 'low',
-      copyleft: 'strong',
-      compatibility: 'low'
-    },
-    reasons: [
-      'Ensures changes are shared ✓',
-      'Strong copyleft protection ✓',
-      'Prevents proprietary derivatives ✓',
-      'Community-focused ✓',
-      'Protects software freedom ✓'
-    ]
-  },
-  {
-    name: 'BSD-3-Clause',
-    description: 'Very similar to MIT but with an extra clause about endorsements.',
-    characteristics: {
-      commercial: true,
-      share_changes: 'not_needed',
-      closed_source: true,
-      saas_opensource: false,
-      patents: false,
-      complexity: 'high',
-      copyleft: 'none',
-      compatibility: 'high'
-    },
-    reasons: [
-      'Allows commercial use ✓',
-      'Extremely simple ✓',
-      'Prevents name misuse ✓',
-      'Academic friendly ✓',
-      'Highly compatible ✓'
-    ]
-  },
-  {
-    name: 'LGPL-2.1',
-    description: 'Allows linking with proprietary code while keeping the library itself open source.',
-    characteristics: {
-      commercial: true,
-      share_changes: 'optional',
-      closed_source: 'maybe',
-      saas_opensource: 'maybe',
-      patents: 'maybe',
-      complexity: 'medium',
-      copyleft: 'weak',
-      compatibility: 'medium'
-    },
-    reasons: [
-      'Allows commercial linking ✓',
-      'Balances open source and business needs ✓',
-      'Good for libraries ✓',
-      'Moderate copyleft ✓'
-    ]
-  },
-  {
-    name: 'AGPL-3.0',
-    description: 'Like GPL but also covers network use, requiring SaaS applications to be open source.',
-    characteristics: {
-      commercial: true,
-      share_changes: 'required',
-      closed_source: false,
-      saas_opensource: true,
-      patents: true,
-      complexity: 'low',
-      copyleft: 'strong',
-      compatibility: 'low'
-    },
-    reasons: [
-      'Covers network use ✓',
-      'Strongest copyleft protection ✓',
-      'Prevents SaaS loopholes ✓',
-      'Ensures complete openness ✓'
-    ]
-  },
-  {
-    name: 'MPL-2.0',
-    description: 'File-level copyleft that allows mixing with proprietary code at the file level.',
-    characteristics: {
-      commercial: true,
-      share_changes: 'optional',
-      closed_source: 'maybe',
-      saas_opensource: 'maybe',
-      patents: true,
-      complexity: 'medium',
-      copyleft: 'weak',
-      compatibility: 'high'
-    },
-    reasons: [
-      'File-level copyleft ✓',
-      'Good for libraries ✓',
-      'Patent protection ✓',
-      'High compatibility ✓'
-    ]
-  },
-  {
-    name: 'ISC',
-    description: 'Simplified BSD license, functionally equivalent to MIT but shorter.',
-    characteristics: {
-      commercial: true,
-      share_changes: 'not_needed',
-      closed_source: true,
-      saas_opensource: false,
-      patents: false,
-      complexity: 'high',
-      copyleft: 'none',
-      compatibility: 'high'
-    },
-    reasons: [
-      'Simplest possible license ✓',
-      'Allows commercial use ✓',
-      'No restrictions ✓',
-      'Maximum compatibility ✓'
-    ]
-  },
-  {
-    name: 'CC0',
-    description: 'Public domain dedication, giving up all rights to your work.',
-    characteristics: {
-      commercial: true,
-      share_changes: 'not_needed',
-      closed_source: true,
-      saas_opensource: false,
-      patents: false,
-      complexity: 'high',
-      copyleft: 'none',
-      compatibility: 'high'
-    },
-    reasons: [
-      'Public domain ✓',
-      'Maximum freedom ✓',
-      'No restrictions whatsoever ✓',
-      'Perfect compatibility ✓'
-    ]
-  },
-  {
-    name: 'Unlicense',
-    description: 'Public domain dedication with explicit patent grant.',
-    characteristics: {
-      commercial: true,
-      share_changes: 'not_needed',
-      closed_source: true,
-      saas_opensource: false,
-      patents: false,
-      complexity: 'high',
-      copyleft: 'none',
-      compatibility: 'high'
-    },
-    reasons: [
-      'Public domain ✓',
-      'Explicit patent grant ✓',
-      'Maximum permissiveness ✓',
-      'Perfect compatibility ✓'
-    ]
-  }
-];
-
-// Calculate recommendations
+// Calculate recommendations based on answers
 function calculateRecommendations() {
-  const licenseScores = licenses.map(license => {
+  const scores = licenses.map(license => {
     let score = 0;
-    const chars = license.characteristics;
+    let totalWeight = 0;
     
     // Commercial use
-    if (answers.commercial === true && chars.commercial === true) score += 3;
-    else if (answers.commercial === 'maybe' && chars.commercial === true) score += 2;
-    else if (answers.commercial === false && chars.commercial === false) score += 3;
+    if (answers.commercial !== undefined) {
+      const weight = 15;
+      totalWeight += weight;
+      if (license.characteristics.commercial === answers.commercial) {
+        score += weight;
+      } else if (answers.commercial === 'maybe' && license.characteristics.commercial) {
+        score += weight * 0.7;
+      }
+    }
     
     // Share changes
-    if (answers.share_changes === chars.share_changes) score += 3;
-    else if (answers.share_changes === 'maybe' && chars.share_changes === 'optional') score += 2;
+    if (answers.share_changes !== undefined) {
+      const weight = 12;
+      totalWeight += weight;
+      if (license.characteristics.share_changes === answers.share_changes) {
+        score += weight;
+      } else if (answers.share_changes === 'optional' && license.characteristics.share_changes === 'maybe') {
+        score += weight * 0.8;
+      }
+    }
     
     // Closed source
-    if (answers.closed_source === chars.closed_source) score += 3;
-    else if (answers.closed_source === 'maybe' && chars.closed_source === 'maybe') score += 2;
+    if (answers.closed_source !== undefined) {
+      const weight = 12;
+      totalWeight += weight;
+      if (license.characteristics.closed_source === answers.closed_source) {
+        score += weight;
+      } else if (answers.closed_source === 'maybe' && license.characteristics.closed_source === 'maybe') {
+        score += weight * 0.8;
+      }
+    }
     
     // SaaS open source
-    if (answers.saas_opensource === chars.saas_opensource) score += 3;
-    else if (answers.saas_opensource === 'maybe' && chars.saas_opensource === 'maybe') score += 2;
+    if (answers.saas_opensource !== undefined) {
+      const weight = 10;
+      totalWeight += weight;
+      if (license.characteristics.saas_opensource === answers.saas_opensource) {
+        score += weight;
+      } else if (answers.saas_opensource === 'maybe' && license.characteristics.saas_opensource === 'maybe') {
+        score += weight * 0.8;
+      }
+    }
     
     // Patents
-    if (answers.patents === chars.patents) score += 3;
-    else if (answers.patents === 'maybe' && chars.patents === 'maybe') score += 2;
+    if (answers.patents !== undefined) {
+      const weight = 8;
+      totalWeight += weight;
+      if (license.characteristics.patents === answers.patents) {
+        score += weight;
+      } else if (answers.patents === 'maybe' && license.characteristics.patents === 'maybe') {
+        score += weight * 0.8;
+      }
+    }
     
-    // Complexity (convert slider to categories)
-    const complexityLevel = answers.complexity <= 3 ? 'low' : answers.complexity <= 7 ? 'medium' : 'high';
-    if (complexityLevel === chars.complexity) score += 3;
+    // Complexity (slider)
+    if (answers.complexity !== undefined) {
+      const weight = 10;
+      totalWeight += weight;
+      const userPrefersSimple = answers.complexity >= 7;
+      const licenseIsSimple = license.characteristics.complexity === 'high';
+      if (userPrefersSimple === licenseIsSimple) {
+        score += weight;
+      } else if (answers.complexity >= 4 && answers.complexity <= 6) {
+        score += weight * 0.5;
+      }
+    }
     
-    // Copyleft (convert slider to categories)
-    const copyleftLevel = answers.copyleft <= 3 ? 'none' : answers.copyleft <= 7 ? 'weak' : 'strong';
-    if (copyleftLevel === chars.copyleft) score += 3;
+    // Copyleft (slider)
+    if (answers.copyleft !== undefined) {
+      const weight = 12;
+      totalWeight += weight;
+      const userPrefersStrongCopyleft = answers.copyleft >= 7;
+      const licenseHasStrongCopyleft = license.characteristics.copyleft === 'strong';
+      if (userPrefersStrongCopyleft === licenseHasStrongCopyleft) {
+        score += weight;
+      } else if (answers.copyleft >= 4 && answers.copyleft <= 6) {
+        const licenseHasWeakCopyleft = license.characteristics.copyleft === 'weak';
+        if (licenseHasWeakCopyleft) {
+          score += weight * 0.7;
+        }
+      }
+    }
     
-    // Compatibility (convert slider to categories)
-    const compatibilityLevel = answers.compatibility <= 3 ? 'low' : answers.compatibility <= 7 ? 'medium' : 'high';
-    if (compatibilityLevel === chars.compatibility) score += 3;
+    // Compatibility (slider)
+    if (answers.compatibility !== undefined) {
+      const weight = 11;
+      totalWeight += weight;
+      const userPrefersHighCompatibility = answers.compatibility >= 7;
+      const licenseHasHighCompatibility = license.characteristics.compatibility === 'high';
+      if (userPrefersHighCompatibility === licenseHasHighCompatibility) {
+        score += weight;
+      } else if (answers.compatibility >= 4 && answers.compatibility <= 6) {
+        const licenseHasMediumCompatibility = license.characteristics.compatibility === 'medium';
+        if (licenseHasMediumCompatibility) {
+          score += weight * 0.7;
+        }
+      }
+    }
     
     return {
-      ...license,
-      score
+      license,
+      score: totalWeight > 0 ? (score / totalWeight) * 100 : 0
     };
   });
   
-  return licenseScores
+  // Sort by score (highest first) and return top 3
+  return scores
     .sort((a, b) => b.score - a.score)
     .slice(0, 3)
-    .map(license => ({
-      name: license.name,
-      score: license.score,
-      description: license.description,
-      reasons: license.reasons
+    .map(item => ({
+      name: item.license.name,
+      description: item.license.description,
+      reasons: item.license.reasons,
+      score: Math.round(item.score)
     }));
 }
 
-
-
 // Theme management
 function loadTheme() {
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  document.documentElement.setAttribute('data-theme', savedTheme);
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }
 }
 
 function toggleTheme() {
-  const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
   
   document.documentElement.setAttribute('data-theme', newTheme);
   localStorage.setItem('theme', newTheme);
