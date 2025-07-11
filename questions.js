@@ -6,6 +6,7 @@ const questions = [
     emoji: '💸',
     description: 'Should companies be able to make money using your code?',
     type: 'toggle',
+    weight: 15,
     options: [
       { value: false, text: '❌ No', emoji: '❌' },
       { value: 'maybe', text: '🤷 I don\'t mind', emoji: '🤷' },
@@ -18,6 +19,7 @@ const questions = [
     emoji: '♻️',
     description: 'Do you want improvements to come back to the community?',
     type: 'toggle',
+    weight: 12,
     options: [
       { value: 'not_needed', text: '🙅 Never', emoji: '🙅' },
       { value: 'optional', text: '🤷 Optional', emoji: '🤷' },
@@ -30,6 +32,7 @@ const questions = [
     emoji: '🔒',
     description: 'How do you feel about proprietary derivatives?',
     type: 'toggle',
+    weight: 12,
     options: [
       { value: false, text: '❌ Not okay', emoji: '❌' },
       { value: 'maybe', text: '🤷 Depends', emoji: '🤷' },
@@ -42,6 +45,7 @@ const questions = [
     emoji: '🌐',
     description: 'What about web applications and services?',
     type: 'toggle',
+    weight: 10,
     options: [
       { value: false, text: '🕵️ No need', emoji: '🕵️' },
       { value: 'maybe', text: '🤷 Not sure', emoji: '🤷' },
@@ -54,6 +58,7 @@ const questions = [
     emoji: '🛡️',
     description: 'Protection against patent trolls and legal issues',
     type: 'toggle',
+    weight: 8,
     options: [
       { value: false, text: '❌ No', emoji: '❌' },
       { value: 'maybe', text: '🤷 Maybe', emoji: '🤷' },
@@ -66,6 +71,7 @@ const questions = [
     emoji: '📜',
     description: 'Simple licenses are easier to understand and adopt',
     type: 'slider',
+    weight: 10,
     minLabel: '📜 Legal text is fine',
     maxLabel: '⚡ Super simple'
   },
@@ -75,6 +81,7 @@ const questions = [
     emoji: '♻️',
     description: 'Should derivative works use the same license?',
     type: 'slider',
+    weight: 12,
     minLabel: '🔓 Not at all',
     maxLabel: '♻️ All of it'
   },
@@ -84,6 +91,7 @@ const questions = [
     emoji: '🤝',
     description: 'Should your license work well with other licenses?',
     type: 'slider',
+    weight: 11,
     minLabel: '🧱 Doesn\'t matter',
     maxLabel: '🤝 Must work with many'
   }

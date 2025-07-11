@@ -283,105 +283,63 @@ function calculateRecommendations() {
     let score = 0;
     let totalWeight = 0;
     
-    // Commercial use
-    if (answers.commercial !== undefined) {
-      const weight = 15;
-      totalWeight += weight;
-      if (license.characteristics.commercial === answers.commercial) {
-        score += weight;
-      } else if (answers.commercial === 'maybe' && license.characteristics.commercial) {
-        score += weight * 0.7;
-      }
-    }
-    
-    // Share changes
-    if (answers.share_changes !== undefined) {
-      const weight = 12;
-      totalWeight += weight;
-      if (license.characteristics.share_changes === answers.share_changes) {
-        score += weight;
-      } else if (answers.share_changes === 'optional' && license.characteristics.share_changes === 'maybe') {
-        score += weight * 0.8;
-      }
-    }
-    
-    // Closed source
-    if (answers.closed_source !== undefined) {
-      const weight = 12;
-      totalWeight += weight;
-      if (license.characteristics.closed_source === answers.closed_source) {
-        score += weight;
-      } else if (answers.closed_source === 'maybe' && license.characteristics.closed_source === 'maybe') {
-        score += weight * 0.8;
-      }
-    }
-    
-    // SaaS open source
-    if (answers.saas_opensource !== undefined) {
-      const weight = 10;
-      totalWeight += weight;
-      if (license.characteristics.saas_opensource === answers.saas_opensource) {
-        score += weight;
-      } else if (answers.saas_opensource === 'maybe' && license.characteristics.saas_opensource === 'maybe') {
-        score += weight * 0.8;
-      }
-    }
-    
-    // Patents
-    if (answers.patents !== undefined) {
-      const weight = 8;
-      totalWeight += weight;
-      if (license.characteristics.patents === answers.patents) {
-        score += weight;
-      } else if (answers.patents === 'maybe' && license.characteristics.patents === 'maybe') {
-        score += weight * 0.8;
-      }
-    }
-    
-    // Complexity (slider)
-    if (answers.complexity !== undefined) {
-      const weight = 10;
-      totalWeight += weight;
-      const userPrefersSimple = answers.complexity >= 7;
-      const licenseIsSimple = license.characteristics.complexity === 'high';
-      if (userPrefersSimple === licenseIsSimple) {
-        score += weight;
-      } else if (answers.complexity >= 4 && answers.complexity <= 6) {
-        score += weight * 0.5;
-      }
-    }
-    
-    // Copyleft (slider)
-    if (answers.copyleft !== undefined) {
-      const weight = 12;
-      totalWeight += weight;
-      const userPrefersStrongCopyleft = answers.copyleft >= 7;
-      const licenseHasStrongCopyleft = license.characteristics.copyleft === 'strong';
-      if (userPrefersStrongCopyleft === licenseHasStrongCopyleft) {
-        score += weight;
-      } else if (answers.copyleft >= 4 && answers.copyleft <= 6) {
-        const licenseHasWeakCopyleft = license.characteristics.copyleft === 'weak';
-        if (licenseHasWeakCopyleft) {
-          score += weight * 0.7;
+    // Process each question using its weight
+    questions.forEach(question => {
+      const answer = answers[question.id];
+      if (answer !== undefined) {
+        const weight = question.weight;
+        totalWeight += weight;
+        
+        // Get the license characteristic for this question
+        const licenseValue = license.characteristics[question.id];
+        
+        if (question.type === 'toggle') {
+          // Handle toggle questions
+          if (licenseValue === answer) {
+            score += weight;
+          } else if (answer === 'maybe' && licenseValue) {
+            score += weight * 0.7;
+          } else if (answer === 'optional' && licenseValue === 'maybe') {
+            score += weight * 0.8;
+          }
+        } else if (question.type === 'slider') {
+          // Handle slider questions
+          const userValue = answer;
+          
+          if (question.id === 'complexity') {
+            const userPrefersSimple = userValue >= 7;
+            const licenseIsSimple = licenseValue === 'high';
+            if (userPrefersSimple === licenseIsSimple) {
+              score += weight;
+            } else if (userValue >= 4 && userValue <= 6) {
+              score += weight * 0.5;
+            }
+          } else if (question.id === 'copyleft') {
+            const userPrefersStrongCopyleft = userValue >= 7;
+            const licenseHasStrongCopyleft = licenseValue === 'strong';
+            if (userPrefersStrongCopyleft === licenseHasStrongCopyleft) {
+              score += weight;
+            } else if (userValue >= 4 && userValue <= 6) {
+              const licenseHasWeakCopyleft = licenseValue === 'weak';
+              if (licenseHasWeakCopyleft) {
+                score += weight * 0.7;
+              }
+            }
+          } else if (question.id === 'compatibility') {
+            const userPrefersHighCompatibility = userValue >= 7;
+            const licenseHasHighCompatibility = licenseValue === 'high';
+            if (userPrefersHighCompatibility === licenseHasHighCompatibility) {
+              score += weight;
+            } else if (userValue >= 4 && userValue <= 6) {
+              const licenseHasMediumCompatibility = licenseValue === 'medium';
+              if (licenseHasMediumCompatibility) {
+                score += weight * 0.7;
+              }
+            }
+          }
         }
       }
-    }
-    
-    // Compatibility (slider)
-    if (answers.compatibility !== undefined) {
-      const weight = 11;
-      totalWeight += weight;
-      const userPrefersHighCompatibility = answers.compatibility >= 7;
-      const licenseHasHighCompatibility = license.characteristics.compatibility === 'high';
-      if (userPrefersHighCompatibility === licenseHasHighCompatibility) {
-        score += weight;
-      } else if (answers.compatibility >= 4 && answers.compatibility <= 6) {
-        const licenseHasMediumCompatibility = license.characteristics.compatibility === 'medium';
-        if (licenseHasMediumCompatibility) {
-          score += weight * 0.7;
-        }
-      }
-    }
+    });
     
     return {
       license,
@@ -390,8 +348,38 @@ function calculateRecommendations() {
   });
   
   // Sort by score (highest first) and return top 3
+  // Add tie-breaking by considering other factors for licenses with same score
   return scores
-    .sort((a, b) => b.score - a.score)
+    .sort((a, b) => {
+      // Primary sort by score
+      if (b.score !== a.score) {
+        return b.score - a.score;
+      }
+      
+      // Tie-breaking: prefer licenses with more matching characteristics
+      let aMatches = 0;
+      let bMatches = 0;
+      
+      // Count exact matches for each characteristic
+      const characteristics = ['commercial', 'share_changes', 'closed_source', 'saas_opensource', 'patents', 'complexity', 'copyleft', 'compatibility'];
+      
+      characteristics.forEach(char => {
+        if (answers[char] !== undefined) {
+          if (a.license.characteristics[char] === answers[char]) aMatches++;
+          if (b.license.characteristics[char] === answers[char]) bMatches++;
+        }
+      });
+      
+      if (bMatches !== aMatches) {
+        return bMatches - aMatches;
+      }
+      
+      // If still tied, prefer simpler licenses (higher complexity value means simpler)
+      const aComplexity = a.license.characteristics.complexity === 'high' ? 3 : a.license.characteristics.complexity === 'medium' ? 2 : 1;
+      const bComplexity = b.license.characteristics.complexity === 'high' ? 3 : b.license.characteristics.complexity === 'medium' ? 2 : 1;
+      
+      return bComplexity - aComplexity;
+    })
     .slice(0, 3)
     .map(item => {
       const personalizedReasons = generatePersonalizedReasons(item.license);
