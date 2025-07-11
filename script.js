@@ -245,9 +245,14 @@ function createRecommendationCard(recommendation, index) {
   
   const emoji = index === 0 ? '👑' : index === 1 ? '🥈' : '🥉';
   const bestMatchBadge = index === 0 ? '<span class="best-match-badge">Best Match</span>' : '';
+  const scoreBadge = `<span class="score-badge">${recommendation.score}%</span>`;
   
-  const reasonsHtml = recommendation.reasons.map(reason => 
+  const positivesHtml = recommendation.positives.map(reason => 
     `<div class="reason-item">${reason}</div>`
+  ).join('');
+  
+  const negativesHtml = recommendation.negatives.map(reason => 
+    `<div class="reason-item negative">${reason}</div>`
   ).join('');
   
   card.innerHTML = `
@@ -257,10 +262,13 @@ function createRecommendationCard(recommendation, index) {
         <div class="recommendation-header">
           <h2 class="recommendation-title">${recommendation.name}</h2>
           ${bestMatchBadge}
+          ${scoreBadge}
         </div>
         <p class="recommendation-description">${recommendation.description}</p>
+        
         <div class="reasons-grid">
-          ${reasonsHtml}
+          ${positivesHtml}
+          ${negativesHtml}
         </div>
       </div>
     </div>
@@ -385,12 +393,238 @@ function calculateRecommendations() {
   return scores
     .sort((a, b) => b.score - a.score)
     .slice(0, 3)
-    .map(item => ({
-      name: item.license.name,
-      description: item.license.description,
-      reasons: item.license.reasons,
-      score: Math.round(item.score)
-    }));
+    .map(item => {
+      const personalizedReasons = generatePersonalizedReasons(item.license);
+      return {
+        name: item.license.name,
+        description: item.license.description,
+        positives: personalizedReasons.positives,
+        negatives: personalizedReasons.negatives,
+        score: Math.round(item.score)
+      };
+    });
+}
+
+// Generate personalized positive and negative reasons based on user answers
+function generatePersonalizedReasons(license) {
+  const positives = [];
+  const negatives = [];
+  
+  // Commercial use
+  if (answers.commercial !== undefined) {
+    if (license.characteristics.commercial === answers.commercial) {
+      if (answers.commercial === true) {
+        positives.push('✓ Allows commercial use');
+      } else if (answers.commercial === false) {
+        positives.push('✓ Restricts commercial use');
+      } else {
+        positives.push('✓ Flexible commercial policy');
+      }
+    } else if (answers.commercial === 'maybe') {
+      // For maybe, show what the license actually does
+      if (license.characteristics.commercial) {
+        positives.push('✓ Allows commercial use');
+      } else {
+        positives.push('✓ Restricts commercial use');
+      }
+    } else {
+      if (answers.commercial === true) {
+        negatives.push('✗ Restricts commercial use');
+      } else if (answers.commercial === false) {
+        negatives.push('✗ Allows commercial use');
+      }
+    }
+  }
+  
+  // Share changes
+  if (answers.share_changes !== undefined) {
+    if (license.characteristics.share_changes === answers.share_changes) {
+      if (answers.share_changes === 'required') {
+        positives.push('✓ Requires sharing changes');
+      } else if (answers.share_changes === 'not_needed') {
+        positives.push('✓ No sharing requirement');
+      } else {
+        positives.push('✓ Optional sharing policy');
+      }
+    } else if (answers.share_changes === 'optional') {
+      // For optional, show what the license actually does
+      if (license.characteristics.share_changes === 'required') {
+        positives.push('✓ Requires sharing changes');
+      } else if (license.characteristics.share_changes === 'not_needed') {
+        positives.push('✓ No sharing requirement');
+      } else {
+        positives.push('✓ Optional sharing policy');
+      }
+    } else {
+      if (answers.share_changes === 'required') {
+        negatives.push('✗ No sharing requirement');
+      } else if (answers.share_changes === 'not_needed') {
+        negatives.push('✗ Requires sharing changes');
+      }
+    }
+  }
+  
+  // Closed source
+  if (answers.closed_source !== undefined) {
+    if (license.characteristics.closed_source === answers.closed_source) {
+      if (answers.closed_source === true) {
+        positives.push('✓ Allows closed-source derivatives');
+      } else if (answers.closed_source === false) {
+        positives.push('✓ Prevents closed-source derivatives');
+      } else {
+        positives.push('✓ Flexible derivative policy');
+      }
+    } else if (answers.closed_source === 'maybe') {
+      // For maybe, show what the license actually does
+      if (license.characteristics.closed_source) {
+        positives.push('✓ Allows closed-source derivatives');
+      } else {
+        positives.push('✓ Prevents closed-source derivatives');
+      }
+    } else {
+      if (answers.closed_source === true) {
+        negatives.push('✗ Prevents closed-source derivatives');
+      } else if (answers.closed_source === false) {
+        negatives.push('✗ Allows closed-source derivatives');
+      }
+    }
+  }
+  
+  // SaaS open source
+  if (answers.saas_opensource !== undefined) {
+    if (license.characteristics.saas_opensource === answers.saas_opensource) {
+      if (answers.saas_opensource === true) {
+        positives.push('✓ Requires SaaS to be open source');
+      } else if (answers.saas_opensource === false) {
+        positives.push('✓ No SaaS open source requirement');
+      } else {
+        positives.push('✓ Flexible SaaS policy');
+      }
+    } else if (answers.saas_opensource === 'maybe') {
+      // For maybe, show what the license actually does
+      if (license.characteristics.saas_opensource) {
+        positives.push('✓ Requires SaaS to be open source');
+      } else {
+        positives.push('✓ No SaaS open source requirement');
+      }
+    } else {
+      if (answers.saas_opensource === true) {
+        negatives.push('✗ No SaaS open source requirement');
+      } else if (answers.saas_opensource === false) {
+        negatives.push('✗ Requires SaaS to be open source');
+      }
+    }
+  }
+  
+  // Patents
+  if (answers.patents !== undefined) {
+    if (license.characteristics.patents === answers.patents) {
+      if (answers.patents === true) {
+        positives.push('✓ Provides patent protection');
+      } else if (answers.patents === false) {
+        positives.push('✓ No patent protection');
+      } else {
+        positives.push('✓ Balanced patent approach');
+      }
+    } else if (answers.patents === 'maybe') {
+      // For maybe, show what the license actually does
+      if (license.characteristics.patents) {
+        positives.push('✓ Provides patent protection');
+      } else {
+        positives.push('✓ No patent protection');
+      }
+    } else {
+      if (answers.patents === true) {
+        negatives.push('✗ No patent protection');
+      } else if (answers.patents === false) {
+        negatives.push('✗ Includes patent protection');
+      }
+    }
+  }
+  
+  // Complexity
+  if (answers.complexity !== undefined) {
+    const userPrefersSimple = answers.complexity >= 7;
+    const licenseIsSimple = license.characteristics.complexity === 'high';
+    
+    if (userPrefersSimple === licenseIsSimple) {
+      if (userPrefersSimple) {
+        positives.push('✓ Simple and easy to understand');
+      } else {
+        positives.push('✓ Comprehensive legal protection');
+      }
+    } else {
+      if (userPrefersSimple) {
+        negatives.push('✗ More complex than preferred');
+      } else {
+        negatives.push('✗ Too simple for needs');
+      }
+    }
+  }
+  
+  // Copyleft
+  if (answers.copyleft !== undefined) {
+    const userPrefersStrongCopyleft = answers.copyleft >= 7;
+    const licenseHasStrongCopyleft = license.characteristics.copyleft === 'strong';
+    
+    if (userPrefersStrongCopyleft === licenseHasStrongCopyleft) {
+      if (userPrefersStrongCopyleft) {
+        positives.push('✓ Strong copyleft protection');
+      } else {
+        positives.push('✓ Permissive approach');
+      }
+    } else {
+      if (userPrefersStrongCopyleft) {
+        negatives.push('✗ Weak copyleft protection');
+      } else {
+        negatives.push('✗ Too restrictive');
+      }
+    }
+  }
+  
+  // Compatibility
+  if (answers.compatibility !== undefined) {
+    const userPrefersHighCompatibility = answers.compatibility >= 7;
+    const licenseHasHighCompatibility = license.characteristics.compatibility === 'high';
+    
+    if (userPrefersHighCompatibility === licenseHasHighCompatibility) {
+      if (userPrefersHighCompatibility) {
+        positives.push('✓ Highly compatible with other licenses');
+      } else {
+        positives.push('✓ Focused on specific use cases');
+      }
+    } else {
+      if (userPrefersHighCompatibility) {
+        negatives.push('✗ Limited compatibility');
+      } else {
+        negatives.push('✗ Too permissive');
+      }
+    }
+  }
+  
+  // Add some general characteristics if we don't have enough personalized reasons
+  if (positives.length < 2) {
+    if (license.characteristics.commercial) {
+      positives.push('✓ Allows commercial use');
+    }
+    if (license.characteristics.complexity === 'high') {
+      positives.push('✓ Simple and easy to understand');
+    }
+    if (license.characteristics.compatibility === 'high') {
+      positives.push('✓ Good compatibility with other licenses');
+    }
+  }
+  
+  if (negatives.length < 1 && positives.length > 2) {
+    // Add a balanced negative if we have enough positives
+    if (license.characteristics.copyleft === 'strong') {
+      negatives.push('⚠ May be too restrictive for some use cases');
+    } else if (license.characteristics.copyleft === 'none') {
+      negatives.push('⚠ Provides minimal protection for your code');
+    }
+  }
+  
+  return { positives, negatives };
 }
 
 // Theme management

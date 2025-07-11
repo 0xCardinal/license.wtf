@@ -407,6 +407,16 @@ body {
     font-weight: 600;
 }
 
+.score-badge {
+    background: linear-gradient(45deg, var(--primary), hsl(155, 70%, 60%));
+    color: var(--primary-foreground);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-left: 0.5rem;
+}
+
 .recommendation-description {
     color: var(--muted-foreground);
     margin-bottom: 1rem;
@@ -425,6 +435,11 @@ body {
     padding: 0.5rem 0.75rem;
     border-radius: 0.5rem;
     font-size: 0.875rem;
+}
+
+.reason-item.negative {
+    color: hsl(0, 60%, 45%);
+    background: hsla(0, 60%, 45%, 0.1);
 }
 
 /* Theme Toggle */
