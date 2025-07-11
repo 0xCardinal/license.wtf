@@ -283,6 +283,8 @@ function handleSubmit() {
   showResults = true;
   renderResults();
   showResultsSection();
+  // Scroll to the top to show all licenses from the beginning
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // Show results section
