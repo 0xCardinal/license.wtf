@@ -116,7 +116,15 @@ function renderQuestions() {
   questions.forEach((question, index) => {
     const questionElement = createQuestionElement(question, index);
     questionsContainer.appendChild(questionElement);
+    
+    // Initialize slider questions with default values if not already set
+    if (question.type === 'slider' && answers[question.id] === undefined) {
+      answers[question.id] = 5; // Default value for sliders
+    }
   });
+  
+  // Update submit button state after initializing defaults
+  updateSubmitButton();
 }
 
 // Create question element
