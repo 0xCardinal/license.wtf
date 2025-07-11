@@ -1,6 +1,6 @@
-# license.ftw
+# license.wtf
 
-This is a pure HTML, CSS, and JavaScript version of the license wizard application, converted from the original React/TypeScript implementation. Live at [licenses.wtf](https://licenses.wtf).
+This is a pure HTML, CSS, and JavaScript version of the license wizard application, converted from the original React/TypeScript implementation. Live at [license.wtf](https://license.wtf).
 
 ## Features
 
@@ -12,7 +12,7 @@ This is a pure HTML, CSS, and JavaScript version of the license wizard applicati
 
 ## How to Use
 
-1. **Visit the Site**: Go to [licenses.wtf](https://licenses.wtf)
+1. **Visit the Site**: Go to [license.wtf](https://license.wtf)
 2. **Answer Questions**: 
    - Toggle questions: Click "Yes", "No", or "Maybe" buttons
    - Slider questions: Drag the slider to set your preference (1-10 scale)
@@ -94,7 +94,7 @@ To modify the application:
 2. **Change Styling**: Modify CSS variables in `styles.css`
 3. **Update Logic**: Edit the scoring functions in `script.js`
 4. **Add Licenses**: Update the license database in `script.js`
-5. **Deploy**: Push changes to the hosting provider for licenses.wtf
+5. **Deploy**: Push changes to GitHub - GitHub Pages will automatically deploy from the main branch
 
 ## License
 
