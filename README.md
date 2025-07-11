@@ -1,14 +1,13 @@
 # license.wtf
 
-This is a pure HTML, CSS, and JavaScript version of the license wizard application, converted from the original React/TypeScript implementation. Live at [license.wtf](https://license.wtf).
+[![AI Assisted Development](https://img.shields.io/badge/AI%20Assisted-Development-blue?style=for-the-badge&logo=openai)](https://github.com/features/copilot)
+[![License: Not Sure](https://img.shields.io/badge/License-Not%20Sure-red.svg?style=for-the-badge)](https://license.wtf)
 
-## Features
+Choosing the right open source license can be confusing and overwhelming. This tool simplifies the decision by asking targeted questions about your project's goals and values.
 
-- **Interactive Quiz**: Answer 8 questions about your licensing preferences
-- **Smart Recommendations**: Get personalized license recommendations based on your answers
-- **Beautiful UI**: Modern, responsive design with smooth animations
-- **Dark Mode Support**: Automatically adapts to system preferences
-- **No Dependencies**: Pure vanilla web technologies
+> 🤖 **AI-Assisted Development**: This project was created with the help of AI tools, but solves real-world problems in open source license selection and developer decision-making.
+
+Live at [license.wtf](https://license.wtf).
 
 ## How to Use
 
@@ -48,54 +47,8 @@ The application recommends from these popular open source licenses:
 - **CC0** - Public domain dedication
 - **Unlicense** - Public domain with patent grant
 
-## File Structure
+## Inspired By
 
-```
-├── index.html          # Main HTML file
-├── styles.css          # All CSS styles and animations
-├── script.js           # JavaScript functionality
-└── README.md           # This file
-```
-
-## Browser Compatibility
-
-- Chrome 60+
-- Firefox 55+
-- Safari 12+
-- Edge 79+
-
-## Design System
-
-The application uses a consistent design system with:
-
-- **Colors**: HSL-based color palette with light/dark mode support
-- **Typography**: Inter font family
-- **Spacing**: Consistent spacing scale
-- **Animations**: Smooth transitions and micro-interactions
-- **Responsive**: Mobile-first responsive design
-
-## Converting from React
-
-This version maintains the exact same functionality as the original React app:
-
-- ✅ All questions and logic preserved
-- ✅ Same scoring algorithm
-- ✅ Identical UI/UX
-- ✅ All animations and interactions
-- ✅ Responsive design
-- ✅ Dark mode support
-- ✅ Theme toggle functionality
-
-## Development
-
-To modify the application:
-
-1. **Add Questions**: Edit the `questions` array in `script.js`
-2. **Change Styling**: Modify CSS variables in `styles.css`
-3. **Update Logic**: Edit the scoring functions in `script.js`
-4. **Add Licenses**: Update the license database in `script.js`
-5. **Deploy**: Push changes to GitHub - GitHub Pages will automatically deploy from the main branch
-
-## License
-
-This project is open source and available under the MIT License. 
+This project was inspired by:
+- **[dont.build](https://dont.build)** - A collection of simple, single-purpose web tools
+- **[choosealicense.com](https://choosealicense.com/)** - GitHub's official license chooser that helps developers select appropriate open source licenses
