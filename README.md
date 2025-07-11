@@ -1,4 +1,4 @@
-# License Wizard - HTML/CSS/JS Version
+# license.ftw
 
 This is a pure HTML, CSS, and JavaScript version of the license wizard application, converted from the original React/TypeScript implementation. Live at [licenses.wtf](https://licenses.wtf).
 
