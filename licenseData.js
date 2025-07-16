@@ -122,6 +122,104 @@ window.licenseDatabase = {
         "description": "No specific jurisdiction is defined for legal disputes."
       }
     }
+  },
+  "bsd-3-clause": {
+    "name": "BSD 3-Clause License",
+    "parameters": {
+      "commercial-use": { "status": "allowed", "description": "You can use the software for commercial purposes." },
+      "attribution-required": { "status": "required", "description": "You must give credit to the original author." },
+      "copyleft-strength": { "status": "none", "description": "No copyleft requirements; you can relicense as you wish." },
+      "patent-grant": { "status": "not-granted", "description": "No explicit patent protection is provided." },
+      "tivoization-protection": { "status": "not-protected", "description": "Does not prevent use in locked-down hardware." },
+      "permissiveness": { "status": "permissive", "description": "Very few restrictions on reuse or modification." },
+      "license-compatibility": { "status": "high", "description": "Compatible with most other open source licenses." },
+      "relicensing-allowed": { "status": "yes", "description": "You can relicense the code under any terms." },
+      "jurisdiction-ambiguity": { "status": "unspecified", "description": "No specific jurisdiction is defined for legal disputes." }
+    }
+  },
+  "lgpl-2.1": {
+    "name": "GNU Lesser General Public License v2.1",
+    "parameters": {
+      "commercial-use": { "status": "allowed", "description": "You can use the software for commercial purposes." },
+      "attribution-required": { "status": "required", "description": "You must give credit to the original author." },
+      "copyleft-strength": { "status": "weak", "description": "Weak copyleft: only changes to the library itself must be open source." },
+      "patent-grant": { "status": "maybe", "description": "Patent protection is not explicitly granted." },
+      "tivoization-protection": { "status": "not-protected", "description": "Does not prevent use in locked-down hardware." },
+      "permissiveness": { "status": "medium", "description": "Some restrictions to ensure code remains open source, but allows linking with proprietary code." },
+      "license-compatibility": { "status": "medium", "description": "Compatible with some, but not all, open source licenses." },
+      "relicensing-allowed": { "status": "limited", "description": "Relicensing is limited to compatible licenses." },
+      "jurisdiction-ambiguity": { "status": "unspecified", "description": "No specific jurisdiction is defined for legal disputes." }
+    }
+  },
+  "agpl-3.0": {
+    "name": "GNU Affero General Public License v3.0",
+    "parameters": {
+      "commercial-use": { "status": "allowed", "description": "You can use the software for commercial purposes." },
+      "attribution-required": { "status": "required", "description": "You must give credit to the original author." },
+      "copyleft-strength": { "status": "strong", "description": "Strong copyleft: all changes and derivatives must be open source, including network use." },
+      "patent-grant": { "status": "granted", "description": "Provides explicit patent protection to users." },
+      "tivoization-protection": { "status": "protected", "description": "Prevents use in locked-down hardware (Tivoization)." },
+      "permissiveness": { "status": "restrictive", "description": "Significant restrictions to ensure code remains open source." },
+      "license-compatibility": { "status": "low", "description": "Not compatible with many permissive licenses." },
+      "relicensing-allowed": { "status": "no", "description": "Cannot be relicensed under other terms." },
+      "jurisdiction-ambiguity": { "status": "unspecified", "description": "No specific jurisdiction is defined for legal disputes." }
+    }
+  },
+  "mpl-2.0": {
+    "name": "Mozilla Public License 2.0",
+    "parameters": {
+      "commercial-use": { "status": "allowed", "description": "You can use the software for commercial purposes." },
+      "attribution-required": { "status": "required", "description": "You must give credit to the original author." },
+      "copyleft-strength": { "status": "weak", "description": "File-level copyleft: only changes to MPL-licensed files must be open source." },
+      "patent-grant": { "status": "granted", "description": "Provides explicit patent protection to users." },
+      "tivoization-protection": { "status": "not-protected", "description": "Does not prevent use in locked-down hardware." },
+      "permissiveness": { "status": "medium", "description": "Some restrictions, but allows mixing with proprietary code at the file level." },
+      "license-compatibility": { "status": "medium", "description": "Compatible with some, but not all, open source licenses." },
+      "relicensing-allowed": { "status": "limited", "description": "Relicensing is limited to compatible licenses." },
+      "jurisdiction-ambiguity": { "status": "unspecified", "description": "No specific jurisdiction is defined for legal disputes." }
+    }
+  },
+  "cc0": {
+    "name": "Creative Commons Zero v1.0 Universal (CC0)",
+    "parameters": {
+      "commercial-use": { "status": "allowed", "description": "You can use the software for commercial purposes." },
+      "attribution-required": { "status": "not-required", "description": "No attribution is required." },
+      "copyleft-strength": { "status": "none", "description": "No copyleft requirements; you can relicense as you wish." },
+      "patent-grant": { "status": "not-granted", "description": "No explicit patent protection is provided." },
+      "tivoization-protection": { "status": "not-protected", "description": "Does not prevent use in locked-down hardware." },
+      "permissiveness": { "status": "permissive", "description": "No restrictions on reuse or modification." },
+      "license-compatibility": { "status": "high", "description": "Compatible with most other open source licenses." },
+      "relicensing-allowed": { "status": "yes", "description": "You can relicense the code under any terms." },
+      "jurisdiction-ambiguity": { "status": "unspecified", "description": "No specific jurisdiction is defined for legal disputes." }
+    }
+  },
+  "unlicense": {
+    "name": "The Unlicense",
+    "parameters": {
+      "commercial-use": { "status": "allowed", "description": "You can use the software for commercial purposes." },
+      "attribution-required": { "status": "not-required", "description": "No attribution is required." },
+      "copyleft-strength": { "status": "none", "description": "No copyleft requirements; you can relicense as you wish." },
+      "patent-grant": { "status": "not-granted", "description": "No explicit patent protection is provided." },
+      "tivoization-protection": { "status": "not-protected", "description": "Does not prevent use in locked-down hardware." },
+      "permissiveness": { "status": "permissive", "description": "No restrictions on reuse or modification." },
+      "license-compatibility": { "status": "high", "description": "Compatible with most other open source licenses." },
+      "relicensing-allowed": { "status": "yes", "description": "You can relicense the code under any terms." },
+      "jurisdiction-ambiguity": { "status": "unspecified", "description": "No specific jurisdiction is defined for legal disputes." }
+    }
+  },
+  "wtfpl": {
+    "name": "Do What The Fuck You Want To Public License (WTFPL)",
+    "parameters": {
+      "commercial-use": { "status": "allowed", "description": "You can use the software for commercial purposes." },
+      "attribution-required": { "status": "not-required", "description": "No attribution is required." },
+      "copyleft-strength": { "status": "none", "description": "No copyleft requirements; you can relicense as you wish." },
+      "patent-grant": { "status": "not-granted", "description": "No explicit patent protection is provided." },
+      "tivoization-protection": { "status": "not-protected", "description": "Does not prevent use in locked-down hardware." },
+      "permissiveness": { "status": "permissive", "description": "No restrictions on reuse or modification." },
+      "license-compatibility": { "status": "high", "description": "Compatible with most other open source licenses." },
+      "relicensing-allowed": { "status": "yes", "description": "You can relicense the code under any terms." },
+      "jurisdiction-ambiguity": { "status": "unspecified", "description": "No specific jurisdiction is defined for legal disputes." }
+    }
   }
 };
 
