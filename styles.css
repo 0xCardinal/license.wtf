@@ -613,8 +613,8 @@ body {
 }
 [data-theme="dark"] .doc-bg {
   background: linear-gradient(135deg, 
-    hsla(160, 60%, 10%, 1) 0%, 
-    hsla(160, 40%, 15%, 1) 100%);
+    hsla(155, 60%, 10%, 1) 0%, 
+    hsla(155, 40%, 15%, 1) 100%);
 }
 
 .doc-container {
