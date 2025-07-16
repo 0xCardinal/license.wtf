@@ -832,6 +832,19 @@ body {
   color: var(--primary);
   border-color: color-mix(in srgb, var(--primary) 30%, transparent 70%);
 }
+.badge-none {
+    background: color-mix(in srgb, var(--primary) 10%, transparent 90%);
+    color: var(--primary);
+    border-color: color-mix(in srgb, var(--primary) 30%, transparent 70%);
+}
+.badge-gray {
+  background: #f3f3f3;
+  color: #888;
+  border: 2px solid #cccccc;
+  box-shadow: 0 0 0 2px #cccccc33;
+  font-style: italic;
+}
+
 .badge-desc {
   font-size: 0.92em;
   opacity: 0.8;
@@ -1051,7 +1064,6 @@ body {
   font-size: 2rem;
   font-weight: 700;
   text-align: center;
-  margin-top: 2.5rem;
   color: var(--foreground);
 }
 .analyze-results-license {
@@ -1162,10 +1174,27 @@ body {
   color: #2563eb;
   border-color: #2563eb;
 }
-.license-param-status.none {
-  background: color-mix(in srgb, var(--muted) 80%, transparent 20%);
-  color: var(--muted-foreground);
-  border-color: var(--muted-foreground);
+.license-param-status.maybe {
+  background: color-mix(in srgb, #f7e06e 20%, transparent 80%);
+  color: #b59d00;
+  border: 2px solid #f7e06e;
+  box-shadow: 0 0 0 2px #f7e06e33;
+}
+.license-param-status.not-required {
+  background: color-mix(in srgb, #b3c6e0 20%, transparent 80%);
+  color: #3a4a5a;
+  border: 2px solid #b3c6e0;
+  box-shadow: 0 0 0 2px #b3c6e033;
+}
+.license-param-status.badge-none,
+.license-param-status.badge-not-required {
+  background: rgba(20, 20, 20, 0.65);
+  color: #fff;
+}
+[data-theme="dark"] .license-param-status.badge-none,
+[data-theme="dark"] .license-param-status.badge-not-required {
+  background: rgba(240, 240, 240, 0.12);
+  color: #fff;
 }
 .license-param-question {
   color: var(--muted-foreground);

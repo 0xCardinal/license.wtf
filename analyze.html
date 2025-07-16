@@ -128,8 +128,12 @@ function renderLicenseGrid(licenseKey) {
       case 'strong':
       case 'protected':
         return 'badge badge-blue';
+      case 'maybe':
+        return 'badge badge-maybe';
+      case 'not-required':
+        return 'badge badge-not-required';
       case 'none':
-        return 'badge'; // neutral, no color
+        return 'badge badge-none';
       default:
         return 'badge';
     }
