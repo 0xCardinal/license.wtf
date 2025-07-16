@@ -4,14 +4,24 @@ const licenses = [
     name: 'MIT',
     description: 'Super simple and permissive. Anyone can do almost anything with your code, including selling it.',
     characteristics: {
+      // 1. Commercial Use
       commercial: true,
-      share_changes: 'not_needed',
-      closed_source: true,
-      saas_opensource: false,
-      patents: false,
-      complexity: 'high',
+      // 2. Attribution Required
+      attribution: true,
+      // 3. Copyleft Strength ('none', 'weak', 'strong')
       copyleft: 'none',
-      compatibility: 'high'
+      // 4. Patent Grant
+      patents: false,
+      // 5. Tivoization Protection
+      tivoization: false,
+      // 6. Permissiveness ('permissive', 'restrictive')
+      permissiveness: 'permissive',
+      // 7. License Compatibility ('high', 'medium', 'low')
+      compatibility: 'high',
+      // 8. Relicensing Allowed ('yes', 'limited', 'no')
+      relicensing: 'yes',
+      // 9. Jurisdiction Ambiguity (true = ambiguous, false = specified)
+      jurisdiction: true
     }
   },
   {
@@ -19,13 +29,14 @@ const licenses = [
     description: 'Like MIT but with better patent protection and more explicit terms for contributions.',
     characteristics: {
       commercial: true,
-      share_changes: 'not_needed',
-      closed_source: true,
-      saas_opensource: false,
-      patents: true,
-      complexity: 'medium',
+      attribution: true,
       copyleft: 'none',
-      compatibility: 'high'
+      patents: true,
+      tivoization: false,
+      permissiveness: 'permissive',
+      compatibility: 'high',
+      relicensing: 'yes',
+      jurisdiction: false // Specified (US)
     }
   },
   {
@@ -33,13 +44,14 @@ const licenses = [
     description: 'Strong copyleft license that requires derivative works to also be open source.',
     characteristics: {
       commercial: true,
-      share_changes: 'required',
-      closed_source: false,
-      saas_opensource: true,
-      patents: true,
-      complexity: 'low',
+      attribution: true,
       copyleft: 'strong',
-      compatibility: 'low'
+      patents: true,
+      tivoization: true,
+      permissiveness: 'restrictive',
+      compatibility: 'low',
+      relicensing: 'no',
+      jurisdiction: true
     }
   },
   {
@@ -47,13 +59,14 @@ const licenses = [
     description: 'Very similar to MIT but with an extra clause about endorsements.',
     characteristics: {
       commercial: true,
-      share_changes: 'not_needed',
-      closed_source: true,
-      saas_opensource: false,
-      patents: false,
-      complexity: 'high',
+      attribution: true,
       copyleft: 'none',
-      compatibility: 'high'
+      patents: false,
+      tivoization: false,
+      permissiveness: 'permissive',
+      compatibility: 'high',
+      relicensing: 'yes',
+      jurisdiction: true
     }
   },
   {
@@ -61,13 +74,14 @@ const licenses = [
     description: 'Allows linking with proprietary code while keeping the library itself open source.',
     characteristics: {
       commercial: true,
-      share_changes: 'optional',
-      closed_source: 'maybe',
-      saas_opensource: 'maybe',
-      patents: 'maybe',
-      complexity: 'medium',
+      attribution: true,
       copyleft: 'weak',
-      compatibility: 'medium'
+      patents: 'maybe',
+      tivoization: false,
+      permissiveness: 'medium',
+      compatibility: 'medium',
+      relicensing: 'limited',
+      jurisdiction: true
     }
   },
   {
@@ -75,13 +89,14 @@ const licenses = [
     description: 'Like GPL but also covers network use, requiring SaaS applications to be open source.',
     characteristics: {
       commercial: true,
-      share_changes: 'required',
-      closed_source: false,
-      saas_opensource: true,
-      patents: true,
-      complexity: 'low',
+      attribution: true,
       copyleft: 'strong',
-      compatibility: 'low'
+      patents: true,
+      tivoization: true,
+      permissiveness: 'restrictive',
+      compatibility: 'low',
+      relicensing: 'no',
+      jurisdiction: true
     }
   },
   {
@@ -89,13 +104,14 @@ const licenses = [
     description: 'File-level copyleft that allows mixing with proprietary code at the file level.',
     characteristics: {
       commercial: true,
-      share_changes: 'optional',
-      closed_source: 'maybe',
-      saas_opensource: 'maybe',
-      patents: true,
-      complexity: 'medium',
+      attribution: true,
       copyleft: 'weak',
-      compatibility: 'medium'
+      patents: true,
+      tivoization: false,
+      permissiveness: 'medium',
+      compatibility: 'medium',
+      relicensing: 'limited',
+      jurisdiction: true
     }
   },
   {
@@ -103,13 +119,14 @@ const licenses = [
     description: 'Public domain dedication - you give up all rights to your work.',
     characteristics: {
       commercial: true,
-      share_changes: 'not_needed',
-      closed_source: true,
-      saas_opensource: false,
-      patents: false,
-      complexity: 'high',
+      attribution: false,
       copyleft: 'none',
-      compatibility: 'high'
+      patents: false,
+      tivoization: false,
+      permissiveness: 'permissive',
+      compatibility: 'high',
+      relicensing: 'yes',
+      jurisdiction: true
     }
   },
   {
@@ -117,13 +134,14 @@ const licenses = [
     description: 'Another public domain dedication, similar to CC0.',
     characteristics: {
       commercial: true,
-      share_changes: 'not_needed',
-      closed_source: true,
-      saas_opensource: false,
-      patents: false,
-      complexity: 'high',
+      attribution: false,
       copyleft: 'none',
-      compatibility: 'high'
+      patents: false,
+      tivoization: false,
+      permissiveness: 'permissive',
+      compatibility: 'high',
+      relicensing: 'yes',
+      jurisdiction: true
     }
   },
   {
@@ -131,13 +149,14 @@ const licenses = [
     description: 'Do What The Fuck You Want To Public License - extremely permissive.',
     characteristics: {
       commercial: true,
-      share_changes: 'not_needed',
-      closed_source: true,
-      saas_opensource: false,
-      patents: false,
-      complexity: 'high',
+      attribution: false,
       copyleft: 'none',
-      compatibility: 'high'
+      patents: false,
+      tivoization: false,
+      permissiveness: 'permissive',
+      compatibility: 'high',
+      relicensing: 'yes',
+      jurisdiction: true
     }
   }
 ]; 

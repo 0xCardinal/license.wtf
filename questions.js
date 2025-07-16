@@ -1,98 +1,101 @@
-// Questions data
+// Updated Questions Data
 const questions = [
   {
-    id: 'commercial',
-    text: 'Can people use your code in commercial projects?',
+    id: 'commercial_use',
+    param: 'commercial',
+    text: 'Do you want to allow commercial use of your code?',
     emoji: '💸',
-    description: 'Should companies be able to make money using your code?',
+    description: 'Can companies or individuals use your code to make money?',
     type: 'toggle',
     weight: 15,
     options: [
-      { value: false, text: '❌ No', emoji: '❌' },
-      { value: 'maybe', text: '🤷 I don\'t mind', emoji: '🤷' },
-      { value: true, text: '✅ Yes', emoji: '✅' }
+      { value: 'true', text: '✅ Sure', emoji: '✅' },
+      { value: 'maybe', text: '🤷 Don’t know', emoji: '🤷' },
+      { value: 'false', text: '❌ No', emoji: '❌' }
     ]
   },
   {
-    id: 'share_changes',
-    text: 'Should people share their changes back?',
+    id: 'copyleft_strength',
+    param: 'copyleft',
+    text: 'Should others have to share improvements they make?',
     emoji: '♻️',
-    description: 'Do you want improvements to come back to the community?',
+    description: 'Do you want improvements to be shared with the community?',
     type: 'toggle',
-    weight: 12,
+    weight: 14,
     options: [
-      { value: 'not_needed', text: '🙅 Never', emoji: '🙅' },
+      { value: 'required', text: '♻️ Always', emoji: '♻️' },
       { value: 'optional', text: '🤷 Optional', emoji: '🤷' },
-      { value: 'required', text: '♻️ Always', emoji: '♻️' }
+      { value: 'not_needed', text: '✅ No need', emoji: '✅' }
     ]
   },
   {
-    id: 'closed_source',
-    text: 'Is it okay if someone turns your code into a closed-source product?',
+    id: 'attribution_required',
+    param: 'attribution',
+    text: 'Should people credit you when using your code?',
+    emoji: '🙏',
+    description: 'Should your name be included when your code is used?',
+    type: 'toggle',
+    weight: 13,
+    options: [
+      { value: 'true', text: '🙏 Yes', emoji: '🙏' },
+      { value: 'maybe', text: '🤷 Don’t know', emoji: '🤷' },
+      { value: 'false', text: '😎 No need', emoji: '😎' }
+    ]
+  },
+  {
+    id: 'permissiveness',
+    param: ['permissiveness', 'compatibility'],
+    text: 'Can your code be used in closed-source software?',
     emoji: '🔒',
-    description: 'How do you feel about proprietary derivatives?',
+    description: 'Is it okay to include your code in proprietary software?',
     type: 'toggle',
     weight: 12,
     options: [
-      { value: false, text: '❌ Not okay', emoji: '❌' },
+      { value: 'true', text: '✅ Totally fine', emoji: '✅' },
       { value: 'maybe', text: '🤷 Depends', emoji: '🤷' },
-      { value: true, text: '✅ Totally fine', emoji: '✅' }
+      { value: 'false', text: '❌ Not okay', emoji: '❌' }
     ]
   },
   {
-    id: 'saas_opensource',
-    text: 'If someone runs your code on a web app (like a SaaS), should they open source it too?',
-    emoji: '🌐',
-    description: 'What about web applications and services?',
+    id: 'patent_grant',
+    param: 'patents',
+    text: 'Do you want protection from patent claims?',
+    emoji: '🛡️',
+    description: 'Should contributors give up patent rights to avoid lawsuits?',
     type: 'toggle',
     weight: 10,
     options: [
-      { value: false, text: '🕵️ No need', emoji: '🕵️' },
-      { value: 'maybe', text: '🤷 Not sure', emoji: '🤷' },
-      { value: true, text: '🌐 Yes, always', emoji: '🌐' }
+      { value: 'true', text: '🛡️ Yes', emoji: '🛡️' },
+      { value: 'maybe', text: '🤷 Maybe', emoji: '🤷' },
+      { value: 'false', text: '❌ No', emoji: '❌' }
     ]
   },
   {
-    id: 'patents',
-    text: 'Do you want protection for your ideas (patents)?',
-    emoji: '🛡️',
-    description: 'Protection against patent trolls and legal issues',
+    id: 'tivoization_protection',
+    param: 'tivoization',
+    text: 'Should users be able to change your code on locked devices?',
+    emoji: '📦',
+    description: 'Should your code stay editable even in hardware like routers or TVs?',
     type: 'toggle',
     weight: 8,
     options: [
-      { value: false, text: '❌ No', emoji: '❌' },
-      { value: 'maybe', text: '🤷 Maybe', emoji: '🤷' },
-      { value: true, text: '🛡️ Yes', emoji: '🛡️' }
+      { value: 'true', text: '🔓 Yes, allow it', emoji: '🔓' },
+      { value: 'maybe', text: '🤷 Not sure', emoji: '🤷' },
+      { value: 'false', text: '📦 Lock it down', emoji: '📦' }
     ]
   },
   {
-    id: 'complexity',
-    text: 'How simple should your license be?',
-    emoji: '📜',
-    description: 'Simple licenses are easier to understand and adopt',
-    type: 'slider',
-    weight: 10,
-    minLabel: '📜 Legal text is fine',
-    maxLabel: '⚡ Super simple'
-  },
-  {
-    id: 'copyleft',
-    text: 'How strongly do you want others to keep their code open (copyleft)?',
-    emoji: '♻️',
-    description: 'Should derivative works use the same license?',
-    type: 'slider',
-    weight: 12,
-    minLabel: '🔓 Not at all',
-    maxLabel: '♻️ All of it'
-  },
-  {
-    id: 'compatibility',
-    text: 'How compatible should your license be with other codebases?',
-    emoji: '🤝',
-    description: 'Should your license work well with other licenses?',
-    type: 'slider',
-    weight: 11,
-    minLabel: '🧱 Doesn\'t matter',
-    maxLabel: '🤝 Must work with many'
+    id: 'popular_safe',
+    param: ['permissiveness', 'compatibility'],
+    text: 'Do you prefer a popular, easy license?',
+    emoji: '🌍',
+    description: 'Should your license be simple and widely adopted?',
+    type: 'toggle',
+    weight: 9,
+    options: [
+      { value: 'true', text: '👍 Yes, keep it easy', emoji: '👍' },
+      { value: 'maybe', text: '🤷 Don’t know', emoji: '🤷' },
+      { value: 'false', text: '⚙️ I want control', emoji: '⚙️' }
+    ]
   }
-]; 
+];

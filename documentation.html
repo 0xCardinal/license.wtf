@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>License Parameters Explained</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="doc-bg">
+  <!-- Theme Toggle -->
+  <div class="theme-toggle">
+    <button id="theme-toggle-btn" class="theme-toggle-btn" title="Toggle theme">
+      <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"/>
+        <path d="M12 1v2"/>
+        <path d="M12 21v2"/>
+        <path d="M4.22 4.22l1.42 1.42"/>
+        <path d="M18.36 18.36l1.42 1.42"/>
+        <path d="M1 12h2"/>
+        <path d="M21 12h2"/>
+        <path d="M4.22 19.78l1.42-1.42"/>
+        <path d="M18.36 5.64l1.42-1.42"/>
+      </svg>
+      <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+      </svg>
+    </button>
+  </div>
+  <div class="doc-container">
+    <!-- Back Link -->
+    <a href="index.html" class="doc-back-link">
+      <span class="doc-back-arrow" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
+      </span>
+      Back to license.wtf
+    </a>
+    <!-- Book Icon -->
+    <div class="doc-header-icon">📚</div>
+    <!-- Title -->
+    <h1 class="doc-title">
+      License Parameters <span class="doc-title-green">Explained</span>
+    </h1>
+    <!-- Subtitle -->
+    <div class="doc-subtitle">
+      Understanding what each license parameter means and how it affects your project.<br>
+      These are the factors we consider when recommending licenses.
+    </div>
+    <!-- Card -->
+    <div class="doc-card">
+      <div class="doc-card-title">
+        <span class="doc-card-emoji">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2eb87e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-icon lucide-book"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>
+        </span>
+        Quick Navigation
+      </div>
+      <div class="doc-param-grid">
+        <a class="doc-param-link" href="#commercial-use"><span class="doc-param-emoji">💰</span>Commercial Use</a>
+        <a class="doc-param-link" href="#attribution-required"><span class="doc-param-emoji">👏</span>Attribution Required</a>
+        <a class="doc-param-link" href="#copyleft-strength"><span class="doc-param-emoji">🔄</span>Copyleft Strength</a>
+        <a class="doc-param-link" href="#patent-grant"><span class="doc-param-emoji">🛡️</span>Patent Grant</a>
+        <a class="doc-param-link" href="#tivoization-protection"><span class="doc-param-emoji">🔒</span>Tivoization Protection</a>
+        <a class="doc-param-link" href="#permissiveness"><span class="doc-param-emoji">🎯</span>Permissiveness</a>
+        <a class="doc-param-link" href="#license-compatibility"><span class="doc-param-emoji">🤝</span>License Compatibility</a>
+        <a class="doc-param-link" href="#relicensing-allowed"><span class="doc-param-emoji">🗂️</span>Relicensing Allowed</a>
+        <a class="doc-param-link" href="#jurisdiction-ambiguity"><span class="doc-param-emoji">⚖️</span>Jurisdiction Ambiguity</a>
+      </div>
+    </div>
+    <!-- Parameter Card: Commercial Use -->
+    <div class="param-card" id="commercial-use">
+      <div class="param-header">
+        <span class="param-emoji">💰</span>
+        <span class="param-title">Commercial Use</span>
+      </div>
+      <div class="param-desc">
+        Can others use your code to make money — including in closed-source, for-profit products?
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>💡</span> Why it matters</div>
+        <div class="param-section-content">Some creators are okay with others building commercial products from their code, others want to prevent it (e.g., artists, educators).</div>
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>🎯</span> Real-world scenario</div>
+        <div class="param-section-content param-scenario">"You write a cool text-to-speech engine. A company bundles it into their product and sells it — is that okay with you?"</div>
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>📋</span> How licenses differ</div>
+        <div class="license-badges">
+          <span class="badge badge-green"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>MIT</span>
+          <span class="badge badge-green"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>Apache-2.0</span>
+          <span class="badge badge-green"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>GPL-3.0</span>
+          <span class="badge badge-red"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-x"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9.5 9.5l5 5m0-5l-5 5"/></svg></span>Creative Commons Non-Commercial (CC-BY-NC)</span>
+        </div>
+      </div>
+    </div>
+    <!-- Parameter Card: Attribution Required -->
+    <div class="param-card" id="attribution-required">
+      <div class="param-header">
+        <span class="param-emoji">👏</span>
+        <span class="param-title">Attribution Required</span>
+      </div>
+      <div class="param-desc">
+        Does someone need to credit you if they use your code?
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>💡</span> Why it matters</div>
+        <div class="param-section-content">This is about recognition. Do you want your name listed in the project using your code?</div>
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>🎯</span> Real-world scenario</div>
+        <div class="param-section-content param-scenario">"Someone includes your library in a mobile app. Do they need to include 'Built with X by @you' somewhere?"</div>
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>📋</span> How licenses differ</div>
+        <div class="license-badges">
+          <span class="badge badge-green"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>MIT</span>
+          <span class="badge badge-green"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>Apache-2.0</span>
+          <span class="badge badge-green"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>GPL-3.0</span>
+          <span class="badge badge-red"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-x"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9.5 9.5l5 5m0-5l-5 5"/></svg></span>WTFPL</span>
+          <span class="badge badge-red"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-x"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9.5 9.5l5 5m0-5l-5 5"/></svg></span>Unlicense</span>
+        </div>
+      </div>
+    </div>
+    <!-- Parameter Card: Copyleft Strength -->
+    <div class="param-card" id="copyleft-strength">
+      <div class="param-header">
+        <span class="param-emoji">🔄</span>
+        <span class="param-title">Copyleft Strength</span>
+      </div>
+      <div class="param-desc">
+        If someone changes your code, do they have to release their changes too?
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>💡</span> Why it matters</div>
+        <div class="param-section-content">Copyleft licenses ensure the open-source ecosystem continues — forks of your project can't go closed-source.</div>
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>🎯</span> Real-world scenario</div>
+        <div class="param-section-content param-scenario">"A company modifies your code and uses it in a product. Do they have to release their modified code?"</div>
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>📋</span> How licenses differ</div>
+        <div class="license-badges">
+          <span class="badge badge-orange"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alert-triangle"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>MIT <span class="badge-desc">(Do whatever)</span></span>
+          <span class="badge badge-orange"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alert-triangle"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>BSD <span class="badge-desc">(Do whatever)</span></span>
+          <span class="badge badge-orange"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alert-triangle"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>LGPL <span class="badge-desc">(Only modifications to your code must be shared)</span></span>
+          <span class="badge badge-blue"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></span>GPL <span class="badge-desc">(Entire project must be open)</span></span>
+        </div>
+      </div>
+    </div>
+    <!-- Parameter Card: Patent Grant -->
+    <div class="param-card" id="patent-grant">
+      <div class="param-header">
+        <span class="param-emoji">🛡️</span>
+        <span class="param-title">Patent Grant</span>
+      </div>
+      <div class="param-desc">
+        Does the license protect users from patent lawsuits by contributors?
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>💡</span> Why it matters</div>
+        <div class="param-section-content">If someone contributes to your project and holds a patent, they could potentially sue users — unless the license prevents that.</div>
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>🎯</span> Real-world scenario</div>
+        <div class="param-section-content param-scenario">"A contributor adds a feature and later claims it violates their patent. Are you protected?"</div>
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>📋</span> How licenses differ</div>
+        <div class="license-badges">
+          <span class="badge badge-green"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>Apache-2.0</span>
+          <span class="badge badge-green"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>GPL-3.0 <span class="badge-desc"></span></span>
+          <span class="badge badge-red"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-x"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9.5 9.5l5 5m0-5l-5 5"/></svg></span>MIT <span class="badge-desc"></span></span>
+          <span class="badge badge-red"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-x"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9.5 9.5l5 5m0-5l-5 5"/></svg></span>BSD <span class="badge-desc"></span></span>
+          <span class="badge badge-red"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-x"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9.5 9.5l5 5m0-5l-5 5"/></svg></span>GPL-2.0 <span class="badge-desc"></span></span>
+        </div>
+      </div>
+    </div>
+    <!-- Parameter Card: Tivoization Protection -->
+    <div class="param-card" id="tivoization-protection">
+      <div class="param-header">
+        <span class="param-emoji">🔒</span>
+        <span class="param-title">Tivoization Protection</span>
+      </div>
+      <div class="param-desc">
+        Can your code be used in locked-down hardware where users can't modify it?
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>💡</span> Why it matters</div>
+        <div class="param-section-content">Some companies use open-source code in devices (like smart TVs) but make it impossible for users to change it. GPL-3.0 blocks this.</div>
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>🎯</span> Real-world scenario</div>
+        <div class="param-section-content param-scenario">"Your code runs on a Wi-Fi router. Can the user replace it with their own version, or does the device prevent that?"</div>
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>📋</span> How licenses differ</div>
+        <div class="license-badges">
+          <span class="badge badge-green"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>GPL-3.0 <span class="badge-desc"></span></span>
+          <span class="badge badge-red"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-x"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9.5 9.5l5 5m0-5l-5 5"/></svg></span>MIT <span class="badge-desc"></span></span>
+          <span class="badge badge-red"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-x"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9.5 9.5l5 5m0-5l-5 5"/></svg></span>Apache-2.0 <span class="badge-desc"></span></span>
+          <span class="badge badge-red"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-x"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9.5 9.5l5 5m0-5l-5 5"/></svg></span>GPL-2.0 <span class="badge-desc"></span></span>
+        </div>
+      </div>
+    </div>
+    <!-- Parameter Card: Permissiveness -->
+    <div class="param-card" id="permissiveness">
+      <div class="param-header">
+        <span class="param-emoji">🎯</span>
+        <span class="param-title">Permissiveness</span>
+      </div>
+      <div class="param-desc">
+        How many restrictions are there on reuse, remixing, and integration with other code?
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>💡</span> Why it matters</div>
+        <div class="param-section-content">Permissive licenses allow your code to be reused more easily, even in closed projects. Restrictive ones enforce open-source behavior.</div>
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>🎯</span> Real-world scenario</div>
+        <div class="param-section-content param-scenario">"A startup wants to use your code in a commercial SaaS product. How much legal work do they have to do?"</div>
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>📋</span> How licenses differ</div>
+        <div class="license-badges">
+          <span class="badge badge-green"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>MIT</span>
+          <span class="badge badge-green"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>BSD</span>
+          <span class="badge badge-red"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-x"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>GPL-3.0</span>
+        </div>
+      </div>
+    </div>
+    <!-- Parameter Card: License Compatibility -->
+    <div class="param-card" id="license-compatibility">
+      <div class="param-header">
+        <span class="param-emoji">🤝</span>
+        <span class="param-title">License Compatibility</span>
+      </div>
+      <div class="param-desc">
+        Can this license be used together with other popular licenses in one project?
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>💡</span> Why it matters</div>
+        <div class="param-section-content">In real-world software, dependencies often have different licenses. Compatibility ensures they can legally coexist.</div>
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>🎯</span> Real-world scenario</div>
+        <div class="param-section-content param-scenario">"You want to use both MIT and GPL code in your project. Are you legally allowed to distribute it?"</div>
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>📋</span> How licenses differ</div>
+        <div class="license-badges">
+          <span class="badge badge-green"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>MIT</span>
+          <span class="badge badge-green"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>Apache-2.0</span>
+          <span class="badge badge-green"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>GPL-3.0 <span class="badge-desc">(Apache-2.0 compatible)</span></span>
+          <span class="badge badge-red"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-x"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9.5 9.5l5 5m0-5l-5 5"/></svg></span>GPL-2.0 <span class="badge-desc">(not Apache-2.0 compatible)</span></span>
+        </div>
+      </div>
+    </div>
+    <!-- Parameter Card: Relicensing Allowed -->
+    <div class="param-card" id="relicensing-allowed">
+      <div class="param-header">
+        <span class="param-emoji">🗂️</span>
+        <span class="param-title">Relicensing Allowed</span>
+      </div>
+      <div class="param-desc">
+        Can others relicense your code under a different license?
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>💡</span> Why it matters</div>
+        <div class="param-section-content">If your license allows relicensing, someone could include your code in a larger work and change the licensing terms.</div>
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>🎯</span> Real-world scenario</div>
+        <div class="param-section-content param-scenario">"Your MIT-licensed code gets pulled into a GPL project. Now the combined project is under GPL. Is that okay with you?"</div>
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>📋</span> How licenses differ</div>
+        <div class="license-badges">
+          <span class="badge badge-green"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>MIT</span>
+          <span class="badge badge-green"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>LGPL</span>
+          <span class="badge badge-red"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-x"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9.5 9.5l5 5m0-5l-5 5"/></svg></span>GPL</span>
+        </div>
+      </div>
+    </div>
+    <!-- Parameter Card: Jurisdiction Ambiguity -->
+    <div class="param-card" id="jurisdiction-ambiguity">
+      <div class="param-header">
+        <span class="param-emoji">⚖️</span>
+        <span class="param-title">Jurisdiction Ambiguity</span>
+      </div>
+      <div class="param-desc">
+        Does the license specify which country's laws apply to disputes?
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>💡</span> Why it matters</div>
+        <div class="param-section-content">Legal interpretation varies between countries. A license with specified jurisdiction (like Apache's US-focus) offers clarity in court.</div>
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>🎯</span> Real-world scenario</div>
+        <div class="param-section-content param-scenario">"A license dispute goes to court. Which country's laws decide the outcome?"</div>
+      </div>
+      <div class="param-section">
+        <div class="param-section-title"><span>📋</span> How licenses differ</div>
+        <div class="license-badges">
+          <span class="badge badge-green"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>Apache-2.0 (U.S. law)</span>
+          <span class="badge badge-red"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-x"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9.5 9.5l5 5m0-5l-5 5"/></svg></span>MIT</span>
+          <span class="badge badge-red"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-x"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9.5 9.5l5 5m0-5l-5 5"/></svg></span>BSD</span>
+          <span class="badge badge-red"><span class="badge-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-x"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9.5 9.5l5 5m0-5l-5 5"/></svg></span>GPL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer Call-to-Action -->
+  <footer class="doc-footer-cta">
+    <hr class="doc-footer-hr">
+    <div class="doc-footer-content">
+      <div class="doc-footer-prompt">Want to find the perfect license for your project?</div>
+      <a href="index.html" style="text-decoration: none;">
+        <button class="submit-btn" style="margin-top: 0.5em;">
+          Start License Quiz! <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+          stroke-linecap="round" stroke-linejoin="round" style="margin-left: 0.4em; vertical-align: middle;"><path d="M18 
+          13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" 
+          x2="21" y2="3"/></svg>
+        </button>
+      </a>
+    </div>
+  </footer>
+  <script>
+  // Theme toggle logic (matches index page)
+  (function() {
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    }
+    function getTheme() {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
+    }
+    function applyThemeFromStorage() {
+      setTheme(getTheme());
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      applyThemeFromStorage();
+      var btn = document.getElementById('theme-toggle-btn');
+      if (btn) {
+        btn.addEventListener('click', function() {
+          var current = getTheme();
+          var next = current === 'dark' ? 'light' : 'dark';
+          setTheme(next);
+        });
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
