@@ -50,5 +50,5 @@ The application recommends from these popular open source licenses:
 ## Inspired By
 
 This project was inspired by:
-- **[dont.build](https://dont.build)** - A collection of simple, single-purpose web tools
+- **[dont.build](https://dont.build)** - A collection of simple questions that help you in the decision of should I build a thing or not.
 - **[choosealicense.com](https://choosealicense.com/)** - GitHub's official license chooser that helps developers select appropriate open source licenses
